@@ -1,0 +1,30 @@
+.div-main{
+  text-align: center;
+  padding: 30px;
+}
+
+#span-question{
+  font-size: xxx-large;
+}
+
+.div-wrapper-options{
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-option{
+  width: 30%;
+  margin: 5px;
+  font-size: xx-large;
+}
+
+#span-msg{
+  font-size: xxx-large;
+}
+
+#btn-next{
+  font-size: xx-large;
+  visibility: hidden;
+}

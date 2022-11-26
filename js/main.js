@@ -1,5 +1,6 @@
 import ru from './ru.js';
 import ja from './ja.js';
+import en from './en.js';
 
 /**
  * 初期処理。問題作成を呼び出し
@@ -8,6 +9,7 @@ window.addEventListener("load", function() {
     let langs = {
         'ru': ru,
         'ja': ja,
+        'en': en,
     };
     let quizzes = null;
 	const langTag = document.getElementById("select-lang");

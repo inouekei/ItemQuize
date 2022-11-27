@@ -10,25 +10,30 @@
 </head>
 <body>
   <div class="div-main">
-    <select id="select-lang">
-      <option value="ja">日本語-Japanese</option>
-      <option value="ru">ロシア語-Russian</option>
-      <option value="en">英語-English</option>
-    </select>
+    <header class="header-main">
+      <select id="select-lang">
+        <option value="ja">日本語-Japanese</option>
+        <option value="ja_romaji">日本語ローマ字-Japanese Roman</option>
+        <option value="ru">ロシア語-Russian</option>
+        <option value="en">英語-English</option>
+      </select>
+    </header>
     <span id="span-question">JavaScriptを有効にしてください</span>
-      <div class="div-wrapper-options">
-        <button class="btn-option" id="option-0">🏔</button>
-        <button class="btn-option" id="option-1">🏔</button>
-        <button class="btn-option" id="option-2">🏔</button>
-        <button class="btn-option" id="option-3">🏔</button>
-        <button class="btn-option" id="option-4">🏔</button>
-        <button class="btn-option" id="option-5">🏔</button>
-        <button class="btn-option" id="option-6">🏔</button>
-        <button class="btn-option" id="option-7">🏔</button>
-        <button class="btn-option" id="option-8">🏔</button>
-      </div>
-      <span id="span-msg">JavaScriptを有効にしてください</span>
-      <button id="btn-next">Next</button>
+    <audio controls src="" id="audio-quiz"></audio>
+    <small class="small-credit">Voice by VOICEVOX:ずんだもん</small>
+    <div class="div-wrapper-options">
+      <button class="btn-option" id="option-0">🏔</button>
+      <button class="btn-option" id="option-1">🏔</button>
+      <button class="btn-option" id="option-2">🏔</button>
+      <button class="btn-option" id="option-3">🏔</button>
+      <button class="btn-option" id="option-4">🏔</button>
+      <button class="btn-option" id="option-5">🏔</button>
+      <button class="btn-option" id="option-6">🏔</button>
+      <button class="btn-option" id="option-7">🏔</button>
+      <button class="btn-option" id="option-8">🏔</button>
+    </div>
+    <span id="span-msg">JavaScriptを有効にしてください</span>
+    <button id="btn-next">Next</button>
   </div>
 </body>
 <script type="module"  src="js/main.js"></script>

@@ -1,5 +1,6 @@
 import ru from './ru.js';
 import ja from './ja.js';
+import ja_romaji from './ja_romaji.js';
 import en from './en.js';
 
 /**
@@ -9,6 +10,7 @@ window.addEventListener("load", function() {
     let langs = {
         'ru': ru,
         'ja': ja,
+        'ja_romaji': ja_romaji,
         'en': en,
     };
     let quizzes = null;
@@ -17,6 +19,7 @@ window.addEventListener("load", function() {
         loadLang();
     });
 	const quizTag = document.getElementById("span-question");
+	const audioTag = document.getElementById("audio-quiz");
 	const msgTag = document.getElementById("span-msg");
     const nextTag = document.getElementById("btn-next");
     nextTag.addEventListener('click', (e) => {
@@ -45,6 +48,8 @@ window.addEventListener("load", function() {
      */
      function loadLang(){
         quizzes = langs[langTag.options[langTag.selectedIndex].value];
+        audioTag.style.visibility = (langTag.options[langTag.selectedIndex].value == "ja") 
+            ? 'visible' : 'hidden';
         updateQuestion();
      }
 
@@ -64,6 +69,10 @@ window.addEventListener("load", function() {
         let quiz = options[Math.floor( Math.random() * options.length )];
         let quizText = quiz[1];
         quizTag.innerText = quizText;
+        if (langTag.options[langTag.selectedIndex].value == "ja"){
+            audioTag.src = "wav/" + quiz[2];
+            audioTag.play;
+        }
 
         answer = quiz[0];
 

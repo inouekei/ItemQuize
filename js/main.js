@@ -14,6 +14,7 @@ window.addEventListener("load", function() {
         'en': en,
     };
     let quizzes = null;
+    let isOpen = false;
 	const langTag = document.getElementById("select-lang");
     langTag.addEventListener('change', function() {
         loadLang();
@@ -24,6 +25,10 @@ window.addEventListener("load", function() {
     const nextTag = document.getElementById("btn-next");
     nextTag.addEventListener('click', (e) => {
         updateQuestion();
+    });
+    const endTag = document.getElementById("btn-end");
+    endTag.addEventListener('click', (e) => {
+        endQuestion();
     });
     const optionTags = [];	
     for (let i = 0; i < 9; i++){
@@ -61,7 +66,9 @@ window.addEventListener("load", function() {
      * @return {} null
      */
     function updateQuestion(){
+        isOpen = true;
         nextTag.style.visibility = 'hidden';
+        endTag.style.visibility = 'visible';
         let options = [];
         for (let i = 0; i < 9; i++){
             options.push(quizzes[Math.floor( Math.random() * quizzes.length )]);
@@ -94,12 +101,15 @@ window.addEventListener("load", function() {
      * @return {} null
      */
       function checkAnswer(e){
+        if (!isOpen) return;
         if (answer != optionTags[e.target.id.replace('option-', '')].innerText){
             msgTag.innerText = "Oops!";
             return;
         }
+        isOpen = false;
         msgTag.innerText = "Great!";
         nextTag.style.visibility = 'visible';
+        endTag.style.visibility = 'hidden';
       }
 
     /**
@@ -109,5 +119,10 @@ window.addEventListener("load", function() {
      * 正解表示
      * @return {} null
      */
-     function EndQuestion(){}
+     function endQuestion(){
+        isOpen = false;
+        msgTag.innerText = answer;
+        endTag.style.visibility = 'hidden';
+        nextTag.style.visibility = 'visible';
+     }
 });

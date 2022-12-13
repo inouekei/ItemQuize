@@ -28,3 +28,8 @@
   font-size: xx-large;
   visibility: hidden;
 }
+
+#btn-end{
+  font-size: xx-large;
+  visibility: visible;
+}

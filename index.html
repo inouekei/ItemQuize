@@ -19,17 +19,25 @@
         <div class="menu-content">
           <ul class='menu-list'>
             <li class='menu-item'>
-              <a class='menu-link' href=''>Coming soon</a>
+              <span class="menu-item-title">Target Language:</span>
+              <select id="select-lang">
+                <option value="ja">日本語-Japanese</option>
+                <option value="ja_romaji">日本語ローマ字-Japanese Roman</option>
+                <option value="ru">ロシア語-Russian</option>
+                <option value="en">英語-English</option>
+              </select>
+            </li>
+            <li class='menu-item'>
+              <span class="menu-item-title">Vocabulary</span>
+              <table id="table-vocabulary">
+              </table>
+            </li>
+            <li class='menu-item'>
+              <a class='menu-link'>Coming soon</a>
             </li>
           </ul>
         </div>
       </div>
-      <select id="select-lang">
-        <option value="ja">日本語-Japanese</option>
-        <option value="ja_romaji">日本語ローマ字-Japanese Roman</option>
-        <option value="ru">ロシア語-Russian</option>
-        <option value="en">英語-English</option>
-      </select>
     </header>
     <span id="span-question">JavaScriptを有効にしてください</span>
     <audio controls src="" id="audio-quiz"></audio>

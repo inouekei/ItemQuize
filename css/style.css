@@ -9,6 +9,7 @@
 .check-hidden {
   display: none;
 }
+  /* メニュー*/
 .menu-btn {
   display: flex;
   height: 30px;
@@ -65,7 +66,11 @@
 .menu-item {
   list-style: none;
   text-align: center;
-  color: darkblue;
+  color: black;
+}
+#table-vocabulary{
+  width: 100%;
+  text-align: center;
 }
 .menu-link {
   display: block;
@@ -82,7 +87,9 @@
 #menu-btn-check:checked ~ .menu-content {
   right: 0;
 }
+/* メニュー*/
 
+/* メイン*/
 #span-question{
   font-size: xxx-large;
 }
@@ -113,3 +120,4 @@
   font-size: xx-large;
   visibility: visible;
 }
+/* メイン*/

@@ -59,7 +59,7 @@ window.addEventListener("load", function() {
      * 語彙DBの変更
      * @return {} null
      */
-     function loadLang(){
+    function loadLang(){
         quizzes = langs[langTag.options[langTag.selectedIndex].value];
         quizzes.forEach(function(quiz) {
             stats[quiz[0]] = [0, 0, 0, 0, 0];
@@ -111,28 +111,18 @@ window.addEventListener("load", function() {
      * 
      * @return {} null
      */
-      function checkAnswer(e){
+    function checkAnswer(e){
         if (!isOpen) return;
         if (answer != optionTags[e.target.id.replace('option-', '')].innerText){
             stats[answer].pop();
             stats[answer].unshift(0);
-            let sum = 0;
-            for (let i = 0; i < stats[answer].length; i++) {
-                sum += stats[answer][i];
-            }
-            let percentage = (sum ? sum / stats[answer].length : 0) * 100;
-            msgTag.innerText = "Oops! Your correctivity is " + percentage + "%";
+            msgTag.innerText = "Oops! Your correctivity is " + getPercentage(answer) + "%";
             return;
         }
         isOpen = false;
         stats[answer].pop();
         stats[answer].unshift(1);
-        let sum = 0;
-        for (let i = 0; i < stats[answer].length; i++) {
-            sum += stats[answer][i];
-        }
-        let percentage = (sum ? sum / stats[answer].length : 0) * 100;
-        msgTag.innerText = "Great! Your correctivity is " + percentage + "%";
+        msgTag.innerText = "Great! Your correctivity is " + getPercentage(answer) + "%";
         nextTag.style.visibility = 'visible';
         endTag.style.visibility = 'hidden';
       }
@@ -144,7 +134,7 @@ window.addEventListener("load", function() {
      * 正解表示
      * @return {} null
      */
-     function endQuestion(){
+    function endQuestion(){
         isOpen = false;
         msgTag.innerText = answer;
         endTag.style.visibility = 'hidden';
@@ -152,6 +142,21 @@ window.addEventListener("load", function() {
      }
 
      /**
+     * getPercentage()
+     * 正解率出力
+     * 
+     * 単語ごとの正解率を計算する
+     * @return {} null
+     */
+    function getPercentage(key){
+        let sum = 0;
+        for (let i = 0; i < stats[key].length; i++) {
+            sum += stats[key][i];
+        }
+        return (sum ? sum / stats[key].length : 0) * 100;
+    }
+
+    /**
      * refreshList()
      * 正解率一覧更新
      * 
@@ -159,5 +164,12 @@ window.addEventListener("load", function() {
      * @return {} null
      */
     function refreshList(){
+        let thTags = [];	
+        let tdTags = [];	
+        for (let i = 0; i < quizzes.length; i++){
+            thTags[i] = document.createElement("TH");
+            tdTags[i] = document.createElement("TD");
+        }
+    
     }
 });

@@ -165,11 +165,15 @@ window.addEventListener("load", function() {
      */
     function refreshList(){
         let thTags = [];	
-        let tdTags = [];	
-        for (let i = 0; i < quizzes.length; i++){
+        let tdTags = [];
+        let i = 0;	
+        stats.forEach(function(k, v) {
             thTags[i] = document.createElement("TH");
+            thTags[i].innerText = k;
             tdTags[i] = document.createElement("TD");
-        }
+            tdTags[i].innerText = v;
+            i++;
+        });
     
     }
 });

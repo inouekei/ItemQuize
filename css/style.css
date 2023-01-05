@@ -59,18 +59,20 @@
   z-index: 80;
   background-color: white;
   transition: all 0.5s;
+  overflow-y: auto;
 }
 .menu-list {
   padding: 70px 10px 0;
 }
 .menu-item {
+  margin-bottom: 10px;
   list-style: none;
   text-align: center;
   color: black;
 }
 #table-vocabulary{
-  width: 100%;
   text-align: center;
+  margin: auto;
 }
 .menu-link {
   display: block;
@@ -121,3 +123,28 @@
   visibility: visible;
 }
 /* メイン*/
+
+/* contribution.html*/
+.content{
+  padding: 30px;
+}
+.h1-main{
+  margin: 40px 0;
+  font-size: xxx-large;
+}
+.h2-main{
+  margin: 50px 0 30px;
+  font-size: xx-large;
+}
+.h3-main{
+  margin: 25px 20px;
+  font-size: x-large;
+}
+.p-main{
+  margin: 20px 0;
+  font-size: large;
+}
+.ul-main{
+  margin: 0 40px;
+}
+/* contribution.html*/
